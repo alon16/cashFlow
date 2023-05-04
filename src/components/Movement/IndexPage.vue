@@ -5,7 +5,8 @@
       <MovementsPage
         v-for="item in movements"
         :key="item.id"
-        :title="item.title"
+        :movement="item"
+        @remove="remove"
       />
     </div>
   </div>
@@ -19,6 +20,9 @@ defineProps({
     default: () => [],
   },
 });
+const remove = (id) => {
+  console.log("remove", id);
+};
 </script>
 vsetup
 <style scoped>

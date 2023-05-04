@@ -53,7 +53,7 @@ export default {
           id: 3,
           title: "MOVIMIENTO 3",
           description: "Lorem ipsum sit",
-          amount: 1000,
+          amount: -100,
         },
         {
           id: 4,
