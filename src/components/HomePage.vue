@@ -5,8 +5,8 @@
     </template>
     <template #resume>
       <resume-page :label="label" :amount="amount" :total-amount="1000000">
-        <template #graphic> graphic </template>
-        <template #action> action </template>
+        <template #graphic> <graphic-page></graphic-page> </template>
+        <template #action> <action-page></action-page></template>
       </resume-page>
     </template>
     <template #movements>
@@ -19,12 +19,16 @@ import LayoutPage from "./LayoutPage.vue";
 import HeaderPage from "./HeaderPage.vue";
 import ResumePage from "./Resume/IndexPage.vue";
 import MovementsPage from "./Movement/IndexPage.vue";
+import ActionPage from "./ActionPage.vue";
+import GraphicPage from "./Resume/GraphicPage.vue";
 export default {
   components: {
     LayoutPage,
     HeaderPage,
     ResumePage,
     MovementsPage,
+    ActionPage,
+    GraphicPage,
   },
   data() {
     return {
