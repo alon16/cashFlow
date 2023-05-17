@@ -6,13 +6,13 @@
         v-for="item in movements"
         :key="item.id"
         :movement="item"
-        @remove="remove"
+        @removed="remove"
       />
     </div>
   </div>
 </template>
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, defineEmits } from "vue";
 import MovementsPage from "./MovementPage.vue";
 defineProps({
   movements: {
@@ -20,8 +20,10 @@ defineProps({
     default: () => [],
   },
 });
+const emit = defineEmits(["removed"]);
+
 const remove = (id) => {
-  console.log("remove", id);
+  emit("removed", id);
 };
 </script>
 vsetup

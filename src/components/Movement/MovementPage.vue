@@ -14,9 +14,9 @@
 </template>
 
 <script setup>
-const currencyFormatter = new Intl.NumberFormat("es-NI", {
+const currencyFormatter = new Intl.NumberFormat("en", {
   style: "currency",
-  currency: "NIC",
+  currency: "USD",
 });
 import { defineProps, computed, defineEmits } from "vue";
 const props = defineProps({
@@ -25,12 +25,12 @@ const props = defineProps({
     default: () => {},
   },
 });
-const emit = defineEmits(["remove"]);
+const emit = defineEmits(["removed"]);
 const amountCurrency = computed(() =>
   currencyFormatter.format(props.movement.amount)
 );
 const remove = () => {
-  emit("remove", props.movement.id);
+  emit("removed", props.movement.id);
 };
 const isNegative = computed(() => props.movement.amount < 0);
 </script>

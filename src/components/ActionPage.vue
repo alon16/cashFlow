@@ -37,7 +37,7 @@
   </div>
 </template>
 <script setup>
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
 import ModalPage from "./ModalPage.vue";
 const showModal = ref(false);
 const movement = ref({
@@ -46,8 +46,17 @@ const movement = ref({
   description: "",
   type: "Ingreso",
 });
+const emit = defineEmits(["created"]);
 const submit = () => {
   showModal.value = false;
+  movement.value.amount =
+    movement.value.type == "Ingreso"
+      ? movement.value.amount
+      : -movement.value.amount;
+  movement.value.time = new Date();
+  movement.value.id = new Date();
+
+  emit("created", movement.value);
 };
 </script>
 <style scoped>
