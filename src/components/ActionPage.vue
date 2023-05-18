@@ -57,6 +57,12 @@ const submit = () => {
   movement.value.id = new Date();
 
   emit("created", movement.value);
+  movement.value = {
+    title: "",
+    amount: 0,
+    description: "",
+    type: "Ingreso",
+  };
 };
 </script>
 <style scoped>

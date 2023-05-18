@@ -11,9 +11,9 @@
   </main>
 </template>
 <script>
-const currencyFormatter = new Intl.NumberFormat("es-NI", {
+const currencyFormatter = new Intl.NumberFormat("en", {
   style: "currency",
-  currency: "NIC",
+  currency: "USD",
 });
 export default {
   props: {
